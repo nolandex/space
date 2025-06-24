@@ -1,32 +1,58 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { StarsCanvas } from "@/components/main/StarBackground";
-import { Footer } from "@/components/main/Footer";
-import Head from "next/head";
+// app/layout.tsx
 
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Space",
-  description: "Portfolio",
+  title: 'Website Saya',
+  description: 'Dibuat menggunakan Next.js',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <Head>
-        {/* Load Material Symbols from Google Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-          rel="stylesheet"
-        />
-      </Head>
-      <body className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
-        <StarsCanvas />
-        {children}
-        <Footer />
+    <html lang="id">
+      <body className={inter.className}>
+        {/* Header tetap ada */}
+        <header style={{
+          backgroundColor: '#f8f9fa',
+          padding: '1rem',
+          borderBottom: '1px solid #dee2e6'
+        }}>
+          <nav style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            <div style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
+              LogoBeei
+            </div>
+            <ul style={{ listStyle: 'none', display: 'flex', gap: '1rem', margin: 0, padding: 0 }}>
+              <li><a href="/">Beranda</a></li>
+              <li><a href="/profil">Profil</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        {/* Konten dari page.tsx akan muncul di sini */}
+        <main style={{ padding: '2rem', minHeight: '80vh', maxWidth: '1200px', margin: '0 auto' }}>
+          {children}
+        </main>
+
+        {/* =================================
+          BAGIAN FOOTER TELAH DIHAPUS 
+          =================================
+        */}
       </body>
     </html>
   );
 }
+ 
