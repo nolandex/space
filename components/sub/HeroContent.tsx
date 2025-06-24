@@ -3,7 +3,6 @@ import Image from "next/image";
 import { slideInFromTop } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-// Impor ikon dari react-icons
 import { FaInstagram, FaTiktok, FaFacebook, FaWhatsapp, FaEnvelope, FaGlobe, FaUserTie, FaUsers } from "react-icons/fa";
 
 export const HeroContent = () => {
@@ -11,8 +10,8 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      // Mengurangi padding atas (pt-40 -> pt-28) untuk menaikkan posisi
-      className="flex flex-col items-center justify-center h-full w-full px-4 sm:px-8 md:px-20 pt-28 sm:pt-32 text-center z-[20]"
+      // PERUBAHAN: Padding atas dikurangi (pt-28 -> pt-20) agar semua elemen naik
+      className="flex flex-col items-center justify-center h-full w-full px-4 sm:px-8 md:px-20 pt-20 text-center z-[20]"
     >
       {/* Foto Profil */}
       <motion.div variants={slideInFromTop} className="mb-5">
@@ -38,7 +37,7 @@ export const HeroContent = () => {
 
       {/* Bagian Media Sosial */}
       <motion.div
-        className="flex flex-wrap justify-center gap-5 mb-8" // Menambah gap menjadi 5
+        className="flex flex-wrap justify-center gap-5 mb-8"
         variants={slideInFromTop}
       >
         {/* Instagram */}
@@ -76,7 +75,7 @@ export const HeroContent = () => {
 
         {/* WhatsApp */}
         <a
-          href="https://api.whatsapp.com/send/?phone=6285156779923&text&type=phone_number&app_absent=0&wame_ctl=1"
+          href="https://api.whatsapp.com/send/?phone=6285156779923"
           target="_blank"
           rel="noopener noreferrer"
           className="button-primary p-3 rounded-full flex items-center justify-center group transform transition duration-300 hover:scale-110"
@@ -97,9 +96,10 @@ export const HeroContent = () => {
         </a>
       </motion.div>
 
-      {/* --- Tombol Aksi --- */}
+      {/* --- Tombol Aksi (Gaya Link In Bio) --- */}
+      {/* PERUBAHAN: Wrapper untuk tombol agar terpusat dan memiliki lebar maksimal */}
       <motion.div
-        className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 mt-4"
+        className="flex flex-col items-center gap-4 mt-4 w-full max-w-sm px-4 sm:px-0"
         variants={slideInFromTop}
       >
         {/* Tombol Website */}
@@ -107,7 +107,8 @@ export const HeroContent = () => {
           href="https://bisnovo.biz.id"
           target="_blank"
           rel="noopener noreferrer"
-          className="button-primary text-sm sm:text-base text-white font-semibold py-2 px-6 rounded-lg flex items-center gap-2 transform transition duration-300 hover:scale-105"
+          // PERUBAHAN: w-full (lebar penuh), py-3 (padding vertikal), text-lg font-bold
+          className="button-primary w-full text-lg font-bold text-white py-3 px-6 rounded-full flex items-center justify-center gap-3 transform transition duration-300 hover:scale-105"
         >
           <FaGlobe/>
           Website
@@ -118,7 +119,8 @@ export const HeroContent = () => {
           href="https://wa.me/6285156779923"
           target="_blank"
           rel="noopener noreferrer"
-          className="button-primary text-sm sm:text-base text-white font-semibold py-2 px-6 rounded-lg flex items-center gap-2 transform transition duration-300 hover:scale-105"
+          // PERUBAHAN: w-full (lebar penuh), py-3 (padding vertikal), text-lg font-bold
+          className="button-primary w-full text-lg font-bold text-white py-3 px-6 rounded-full flex items-center justify-center gap-3 transform transition duration-300 hover:scale-105"
         >
             <FaUserTie />
           Tanya Admin
@@ -129,7 +131,8 @@ export const HeroContent = () => {
           href="https://chat.whatsapp.com/GSVWl1Jb15tEB4gK9ajvbG"
           target="_blank"
           rel="noopener noreferrer"
-          className="button-primary text-sm sm:text-base text-white font-semibold py-2 px-6 rounded-lg flex items-center gap-2 transform transition duration-300 hover:scale-105"
+          // PERUBAHAN: w-full (lebar penuh), py-3 (padding vertikal), text-lg font-bold
+          className="button-primary w-full text-lg font-bold text-white py-3 px-6 rounded-full flex items-center justify-center gap-3 transform transition duration-300 hover:scale-105"
         >
             <FaUsers />
           Gabung Grup Reseller
