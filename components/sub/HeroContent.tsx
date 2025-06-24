@@ -10,8 +10,8 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      // PERUBAHAN: Padding atas dikurangi (pt-28 -> pt-20) agar semua elemen naik
-      className="flex flex-col items-center justify-center h-full w-full px-4 sm:px-8 md:px-20 pt-20 text-center z-[20]"
+      // PERUBAHAN: Padding atas dikurangi lagi (pt-20 -> pt-12) agar lebih ke atas
+      className="flex flex-col items-center justify-center h-full w-full px-4 sm:px-8 md:px-20 pt-12 text-center z-[20]"
     >
       {/* Foto Profil */}
       <motion.div variants={slideInFromTop} className="mb-5">
@@ -97,7 +97,6 @@ export const HeroContent = () => {
       </motion.div>
 
       {/* --- Tombol Aksi (Gaya Link In Bio) --- */}
-      {/* PERUBAHAN: Wrapper untuk tombol agar terpusat dan memiliki lebar maksimal */}
       <motion.div
         className="flex flex-col items-center gap-4 mt-4 w-full max-w-sm px-4 sm:px-0"
         variants={slideInFromTop}
@@ -107,7 +106,6 @@ export const HeroContent = () => {
           href="https://bisnovo.biz.id"
           target="_blank"
           rel="noopener noreferrer"
-          // PERUBAHAN: w-full (lebar penuh), py-3 (padding vertikal), text-lg font-bold
           className="button-primary w-full text-lg font-bold text-white py-3 px-6 rounded-full flex items-center justify-center gap-3 transform transition duration-300 hover:scale-105"
         >
           <FaGlobe/>
@@ -119,7 +117,6 @@ export const HeroContent = () => {
           href="https://wa.me/6285156779923"
           target="_blank"
           rel="noopener noreferrer"
-          // PERUBAHAN: w-full (lebar penuh), py-3 (padding vertikal), text-lg font-bold
           className="button-primary w-full text-lg font-bold text-white py-3 px-6 rounded-full flex items-center justify-center gap-3 transform transition duration-300 hover:scale-105"
         >
             <FaUserTie />
@@ -131,7 +128,6 @@ export const HeroContent = () => {
           href="https://chat.whatsapp.com/GSVWl1Jb15tEB4gK9ajvbG"
           target="_blank"
           rel="noopener noreferrer"
-          // PERUBAHAN: w-full (lebar penuh), py-3 (padding vertikal), text-lg font-bold
           className="button-primary w-full text-lg font-bold text-white py-3 px-6 rounded-full flex items-center justify-center gap-3 transform transition duration-300 hover:scale-105"
         >
             <FaUsers />
