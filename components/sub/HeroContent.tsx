@@ -10,7 +10,6 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      // PERUBAHAN: Padding atas dikurangi lagi (pt-20 -> pt-12) agar lebih ke atas
       className="flex flex-col items-center justify-center h-full w-full px-4 sm:px-8 md:px-20 pt-12 text-center z-[20]"
     >
       {/* Foto Profil */}
@@ -20,16 +19,19 @@ export const HeroContent = () => {
           alt="Profile Picture"
           width={150}
           height={150}
-          className="rounded-full object-cover border-4 border-purple-500 shadow-lg"
+          // PERUBAHAN: border-purple-500 diubah menjadi border-blue-500
+          className="rounded-full object-cover border-4 border-blue-500 shadow-lg"
         />
       </motion.div>
 
       {/* Fullstack Developer Portfolio */}
       <motion.div
-        className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] mb-5 flex items-center justify-center"
+        // PERUBAHAN: Kelas border dihapus karena sudah diatur di Welcome-box pada globals.css
+        className="Welcome-box py-[8px] px-[7px] border border-blue-600 opacity-[0.9] mb-5 flex items-center justify-center"
         variants={slideInFromTop}
       >
-        <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+        {/* PERUBAHAN: text-[#b49bff] diubah menjadi text-sky-400 */ }
+        <SparklesIcon className="text-sky-400 mr-[10px] h-5 w-5" />
         <h1 className="Welcome-text text-[13px] sm:text-[15px] md:text-[18px]">
           Fullstack Developer Portfolio
         </h1>
@@ -40,7 +42,7 @@ export const HeroContent = () => {
         className="flex flex-wrap justify-center gap-5 mb-8"
         variants={slideInFromTop}
       >
-        {/* Instagram */}
+        {/* Ikon media sosial tidak diubah karena hover-nya sudah berwarna-warni */}
         <a
           href="https://www.instagram.com/bisnovo"
           target="_blank"
@@ -51,7 +53,6 @@ export const HeroContent = () => {
           <FaInstagram className="w-6 h-6 text-white group-hover:text-pink-400" />
         </a>
 
-        {/* TikTok */}
         <a
           href="https://www.tiktok.com/@bisnovo"
           target="_blank"
@@ -62,7 +63,6 @@ export const HeroContent = () => {
           <FaTiktok className="w-6 h-6 text-white group-hover:text-blue-400" />
         </a>
 
-        {/* Facebook */}
         <a
           href="https://www.facebook.com/share/1H87XB9aw7/"
           target="_blank"
@@ -73,7 +73,6 @@ export const HeroContent = () => {
           <FaFacebook className="w-6 h-6 text-white group-hover:text-blue-500" />
         </a>
 
-        {/* WhatsApp */}
         <a
           href="https://api.whatsapp.com/send/?phone=6285156779923"
           target="_blank"
@@ -84,7 +83,6 @@ export const HeroContent = () => {
           <FaWhatsapp className="w-6 h-6 text-white group-hover:text-green-500" />
         </a>
 
-        {/* Email */}
         <a
           href="mailto:bisnovohq@gmail.com"
           target="_blank"
@@ -96,12 +94,11 @@ export const HeroContent = () => {
         </a>
       </motion.div>
 
-      {/* --- Tombol Aksi (Gaya Link In Bio) --- */}
+      {/* --- Tombol Aksi --- */}
       <motion.div
         className="flex flex-col items-center gap-4 mt-4 w-full max-w-sm px-4 sm:px-0"
         variants={slideInFromTop}
       >
-        {/* Tombol Website */}
         <a
           href="https://bisnovo.biz.id"
           target="_blank"
@@ -112,7 +109,6 @@ export const HeroContent = () => {
           Website
         </a>
 
-        {/* Tombol Tanya Admin */}
         <a
           href="https://wa.me/6285156779923"
           target="_blank"
@@ -123,7 +119,6 @@ export const HeroContent = () => {
           Tanya Admin
         </a>
         
-        {/* Tombol Gabung Grup Reseller */}
         <a
           href="https://chat.whatsapp.com/GSVWl1Jb15tEB4gK9ajvbG"
           target="_blank"
