@@ -92,7 +92,7 @@ export const HeroContent = () => {
           className="button-primary w-full text-lg font-bold text-white py-3 px-6 rounded-full flex items-center justify-center gap-3 transform transition duration-300 hover:scale-105"
         >
           <FaGlobe/>
-          Profil Bisnis Web
+          Profil Bisnis Bisnovo
         </a>
         
         <a
