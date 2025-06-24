@@ -3,7 +3,6 @@ import Image from "next/image";
 import { slideInFromTop } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-// Ikon FaWhatsapp tetap diimpor karena digunakan di tombol "Chat Admin" dan "Affiliate Reseller Group"
 import { FaInstagram, FaTiktok, FaFacebook, FaWhatsapp, FaEnvelope, FaGlobe, FaUserTie, FaUsers } from "react-icons/fa";
 
 export const HeroContent = () => {
@@ -16,7 +15,7 @@ export const HeroContent = () => {
       {/* Foto Profil */}
       <motion.div variants={slideInFromTop} className="mb-5">
         <Image
-          src="/profile.png" // Ganti dengan path ke foto profil Anda
+          src="/profile.png" // Pastikan gambar ini ada di folder /public
           alt="Profile Picture"
           width={150}
           height={150}
@@ -24,7 +23,7 @@ export const HeroContent = () => {
         />
       </motion.div>
 
-      {/* === PERUBAHAN DI SINI === */}
+      {/* Judul Utama */}
       <motion.div
         className="Welcome-box py-[8px] px-[7px] border border-blue-600 opacity-[0.9] mb-5 flex items-center justify-center"
         variants={slideInFromTop}
@@ -35,12 +34,11 @@ export const HeroContent = () => {
         </h1>
       </motion.div>
 
-      {/* Bagian Media Sosial */}
+      {/* Bagian Ikon Media Sosial */}
       <motion.div
-        className="flex flex-wrap justify-center gap-5 mb-8"
+        className="flex flex-wrap justify-center gap-5 mb-4"
         variants={slideInFromTop}
       >
-        {/* === PERUBAHAN DI SINI: Ikon WhatsApp telah dihapus dari baris ini === */}
         <a
           href="https://www.instagram.com/bisnovo"
           target="_blank"
@@ -82,7 +80,7 @@ export const HeroContent = () => {
         </a>
       </motion.div>
 
-      {/* --- Tombol Aksi --- */}
+      {/* Tombol-Tombol Aksi */}
       <motion.div
         className="flex flex-col items-center gap-4 mt-4 w-full max-w-sm px-4 sm:px-0"
         variants={slideInFromTop}
