@@ -1,58 +1,36 @@
-// app/layout.tsx
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { StarsCanvas } from "@/components/main/StarBackground";
+// 1. Impor untuk Footer dihapus karena komponennya tidak lagi digunakan
+// import { Footer } from "@/components/main/Footer";
 
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
+// 2. Impor untuk "next/head" dihapus karena tidak digunakan di App Router
+// import Head from "next/head";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Website Saya',
-  description: 'Dibuat menggunakan Next.js',
+  title: "Space",
+  description: "Portfolio",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id">
-      <body className={inter.className}>
-        {/* Header tetap ada */}
-        <header style={{
-          backgroundColor: '#f8f9fa',
-          padding: '1rem',
-          borderBottom: '1px solid #dee2e6'
-        }}>
-          <nav style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto'
-          }}>
-            <div style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
-              LogoBeei
-            </div>
-            <ul style={{ listStyle: 'none', display: 'flex', gap: '1rem', margin: 0, padding: 0 }}>
-              <li><a href="/">Beranda</a></li>
-              <li><a href="/profil">Profil</a></li>
-            </ul>
-          </nav>
-        </header>
-
-        {/* Konten dari page.tsx akan muncul di sini */}
-        <main style={{ padding: '2rem', minHeight: '80vh', maxWidth: '1200px', margin: '0 auto' }}>
-          {children}
-        </main>
-
-        {/* =================================
-          BAGIAN FOOTER TELAH DIHAPUS 
-          =================================
-        */}
+    <html lang="en">
+      {/* 3. Tag <head> standar digunakan di sini, bukan komponen <Head> dari Next */}
+      <head>
+        {/* Link untuk font Material Symbols ditempatkan langsung di sini */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
+        <StarsCanvas />
+        {children}
+        {/* 4. Komponen <Footer /> telah dihapus sepenuhnya dari sini */}
       </body>
     </html>
   );
 }
- 
